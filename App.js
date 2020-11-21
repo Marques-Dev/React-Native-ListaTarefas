@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import {View, Text, StyleSheet, TextInput, TouchableOpacity, ImageBackground} from 'react-native';
+import React, { useState } from 'react'; //importando o react na aplicação
+import {View, Text, StyleSheet, TextInput, TouchableOpacity, ImageBackground} from 'react-native'; // importando algumas tags de dentro do react native
 
-export default function App(){
-const [peso, setPeso] = useState('');
+export default function App(){ // ciando nosso primeiro componente em forma de função
+const [peso, setPeso] = useState(''); //utilizando os estados do usaState
 const [altura, setAltura] = useState('');
 
 
@@ -20,15 +20,16 @@ function enviar(){
   }
 }
 
-  return(
+  //JSX
+  return( 
     <ImageBackground source={require('./src/background/back.jpg')}
     style={styles.container}>
       <Text style={styles.title}> IMC </Text>
 
-      <TextInput
+      <TextInput // div
         style={styles.input}
         value={peso}
-        onChangeText={(peso) => setPeso(peso)}
+        onChangeText={(peso) => setPeso(peso)} //cada vez que digitar ele vai armazenar em uma variavel {useState} estados
         placeholder="Peso (KG)"
         keyboardType="numeric"
       />
@@ -37,7 +38,7 @@ function enviar(){
         style={styles.input}
         value={altura}
         onChangeText={(altura) => setAltura(altura)}
-        placeholder="Altura (KG)"
+        placeholder="Altura (cm)"
         keyboardType="numeric"
       />
 
@@ -53,11 +54,13 @@ function enviar(){
   );
 }
 
-const styles = StyleSheet.create({
+//chamando o stylesheet para esilização de cada componente
+const styles = StyleSheet.create({ 
+  //ciando um grupo de estilização
   container:{
-    flex: 1,
-    
-       
+    //propiedades de estilos
+    flex: 1, //pegar toda tela
+          
   },
   title:{
     textAlign: 'center',
@@ -66,11 +69,11 @@ const styles = StyleSheet.create({
   },
   input:{
     backgroundColor: '#121212',
-    borderRadius: 10,
-    margin: 15,
-    padding: 10,
-    color: '#FFF',
-    fontSize: 20
+    borderRadius: 10, //bordas3w2
+    margin: 15, //margem de todos os lados
+    padding: 10, //espaçamento interno
+    color: '#FFF', //cor
+    fontSize: 20 //tamanho da fonte
   },
   btn:{
     justifyContent: 'center',
