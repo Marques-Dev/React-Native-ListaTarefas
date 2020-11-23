@@ -22,7 +22,7 @@ function enviar(){
 
   //JSX
   return( 
-    <ImageBackground source={require('./src/background/back.jpg')}
+    <ImageBackground source={require('./src/background/back.jpg')} //colocar imagem
     style={styles.container}>
       <Text style={styles.title}> IMC </Text>
 
